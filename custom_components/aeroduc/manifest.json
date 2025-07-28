@@ -1,0 +1,18 @@
+{
+  "domain": "aeroduc",
+  "name": "Aeroduc Climate Controller",
+  "version": "1.0.0",
+  "documentation": "https://github.com/YourUser/aeroduc-hass-integration",
+  "issue_tracker": "https://github.com/YourUser/aeroduc-hass-integration/issues",
+  "codeowners": ["@aeroduc"],
+  "config_flow": true,
+  "zeroconf": [
+    {
+      "type": "_aeroduc._tcp.local.",
+      "name": ".*"
+    }
+  ],
+  "dependencies": ["zeroconf"],
+  "iot_class": "local_polling",
+  "requirements": []
+}
