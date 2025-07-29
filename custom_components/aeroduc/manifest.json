@@ -1,11 +1,14 @@
 {
   "domain": "aeroduc",
   "name": "Aeroduc Climate Controller",
-  "version": "1.0.0",
-  "documentation": "https://github.com/YourUser/aeroduc-hass-integration",
-  "issue_tracker": "https://github.com/YourUser/aeroduc-hass-integration/issues",
+  "version": "2025.7.99",
+  "documentation": "https://github.com/aeroduc/home-assistant-aeroduc",
+  "issue_tracker": "https://github.com/aeroduc/home-assistant-aeroduc/issues",
   "codeowners": ["@aeroduc"],
+  "after_dependencies": [],
   "config_flow": true,
+  "configuration": false,
+  "integration_type": "hub",
   "zeroconf": [
     {
       "type": "_aeroduc._tcp.local.",
