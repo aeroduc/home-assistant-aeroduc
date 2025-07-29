@@ -4,7 +4,9 @@
   "version": "2025.7.99",
   "documentation": "https://github.com/aeroduc/home-assistant-aeroduc",
   "issue_tracker": "https://github.com/aeroduc/home-assistant-aeroduc/issues",
-  "codeowners": ["@aeroduc"],
+  "codeowners": [
+    "@aeroduc"
+  ],
   "after_dependencies": [],
   "config_flow": true,
   "configuration": false,
@@ -12,10 +14,15 @@
   "zeroconf": [
     {
       "type": "_aeroduc._tcp.local.",
-      "name": ".*"
+      "name": ".*",
+      "properties": {
+        "manufacturer": "Aeroduc"
+      }
     }
   ],
-  "dependencies": ["zeroconf"],
+  "dependencies": [
+    "zeroconf"
+  ],
   "iot_class": "local_polling",
   "requirements": []
 }
