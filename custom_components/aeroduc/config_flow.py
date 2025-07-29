@@ -13,12 +13,12 @@ class AeroducConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     async def async_step_zeroconf(self, discovery_info):
-        _LOGGER.warning("🧠 Zeroconf triggered: %s", discovery_info)
+        _LOGGER.warning("Zeroconf triggered: %s", discovery_info)
 
         self.discovery_info = discovery_info
         host = getattr(discovery_info, "host", discovery_info.ip_address)
         unique_id = discovery_info.properties.get("device_id", host)
-        _LOGGER.warning("🌍 Using unique_id: %s", unique_id)
+        _LOGGER.warning("Using unique_id: %s", unique_id)
 
         await self.async_set_unique_id(unique_id)
         self._abort_if_unique_id_configured(updates={CONF_HOST: host})
