@@ -1,14 +1,23 @@
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from .const import DOMAIN
-from .climate import async_setup_entry as climate_setup
+from .device import AeroducDevice
+import logging
+
+_LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup(hass: HomeAssistant, config: dict):
-    # Required to allow config flow setup
     return True
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    await hass.config_entries.async_forward_entry_setups(entry, ["climate", "sensor"])
+    # create & initialize your device
+    device = AeroducDevice(entry.data["host"])
+    await device.initialize()
+    # stash it so your platforms can pick it up
+    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = device
+
+    # forward to sensor only
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor"])
     return True
