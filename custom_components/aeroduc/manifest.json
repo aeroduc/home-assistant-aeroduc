@@ -12,17 +12,13 @@
   "configuration": false,
   "integration_type": "hub",
   "zeroconf": [
-    {
-      "type": "_aeroduc._tcp.local.",
-      "name": ".*",
-      "properties": {
-        "manufacturer": "Aeroduc"
-      }
-    }
+    "_aeroduc._tcp.local."
   ],
   "dependencies": [
     "zeroconf"
   ],
-  "iot_class": "local_polling",
-  "requirements": []
+  "requirements": [],
+  "platforms": [
+    "sensor"
+  ]
 }
