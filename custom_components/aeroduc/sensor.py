@@ -40,7 +40,7 @@ class AeroducSensorBase(SensorEntity):
 class AeroducTemperature(AeroducSensorBase):
     def __init__(self, device):
         super().__init__(device, "temperature")
-        self._attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
+        self._attr_native_unit_of_measurement = UnitOfTemperature.FAHRENHEIT
 
     async def async_update(self):
         # HA calls this to refresh the value
